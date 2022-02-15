@@ -1,0 +1,33 @@
+---
+const menu=["Home","About","Joke"]
+const theme=[
+  {"theme":"auto","label":"Auto"},
+  {"theme":"light","label":"Light"},
+  {"theme":"dark","label":"Dark"}
+]
+---
+<header>
+    <nav>
+        <ul>
+            <li><h1><a href="#">Freelancer</a></h1></li>
+        </ul>
+        <!-- using jsx-like syntax -->
+        <ul>
+            <li><a href="/">首頁</a></li> |
+            <!-- <li><a href="#">Blog</a></li> -->
+            <li><a href="/about">About</a></li> |
+            <li><a href="/jokes">Jokes</a></li>
+            <!-- { menu.map(item=><li><a href="#">{item}</a></li>)} -->
+        </ul>       
+    </nav>
+    <nav>
+        <ul>
+            <li>Theme:</li>
+            <!-- <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+            <li><a href="#" data-theme-switcher="light">Light</a></li>
+            <li><a href="#" data-theme-switcher="dark">Dark</a></li> -->
+            { theme.map(item=><li><a role="button" style="margin-right: 10px;" class="outline" href="#" data-theme-switcher={item.theme}>{item.label}</a></li>)}
+        </ul>
+    </nav>
+  </header>
+   <!-- <script type="module" src={Astro.resolve('../utils/theme-switcher.js')} ></script>   -->

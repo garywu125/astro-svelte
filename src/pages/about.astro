@@ -1,0 +1,18 @@
+---
+// Example: HTML page skeleton
+import BaseLayout from '../layouts/base_layout.astro'
+// import Navbar from '../layouts/navbar.astro'
+import Outer from '../components/Outer.svelte'
+
+const pdata = {
+		name: 'svelte',
+		version: 3,
+		speed: 'blazing',
+		website: 'https://svelte.dev',
+        lang: '中文 | english | こにちわ'
+	};
+---
+<BaseLayout>
+    <h1>About</h1>    
+    <Outer {...pdata} client:load/>       
+</BaseLayout>

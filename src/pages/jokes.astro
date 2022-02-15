@@ -1,0 +1,23 @@
+<!-- svelte dynamic component 不能使用 astro layout component ??? -->
+---
+// Example: HTML page skeleton
+// import BaseLayout from '../layouts/base_layout.astro'
+import Navbar from '../layouts/navbar.astro'
+import WithSvelte from '../components/withsvelte/WithSvelte.svelte';
+---
+<!doctype html>
+<html>    
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Jokes</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">		
+</head>
+<body class="container">  
+    <Navbar />  
+    <h1>Jokes</h1>
+    <WithSvelte client:load/>    
+    <script type="module" src={Astro.resolve('../utils/theme-switcher.js')} ></script>      
+</body>
+</html>
